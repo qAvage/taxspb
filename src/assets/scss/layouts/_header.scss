@@ -1,0 +1,227 @@
+// -----------------------------------------------------------------------------
+// Header stylesheets
+// -----------------------------------------------------------------------------
+
+
+
+#header {
+  position: fixed;
+  top: -1px;
+  right: 0;
+  left: 0;
+  z-index: 99;
+  background-color: $white;
+  box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.1);
+
+  .top {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+  
+      .ui-icon {
+        width: 76px;
+        height: 32px;
+      }
+    }
+  
+    nav {
+      font-size: 14px;
+  
+      ul {
+        display: flex;
+        gap: 30px;
+        
+        li {
+
+          &:hover {
+            color: $text-hover;
+          }
+
+          &:active {
+            color: $text;
+          }
+        }
+      }
+
+      & > a {
+        display: none;
+      }
+    }
+
+    .phone-number {
+
+      &:hover {
+        color: $text-hover;
+      }
+
+      &:active {
+        color: $text;
+      }
+    }
+
+    .ui-button {
+      margin-left: 30px;
+      padding: 12px 20px;
+    }
+
+    #burger {
+      display: none;
+    }
+  }
+
+  #overlay {
+    display: none;
+  }
+  
+  @include respond(large) {
+
+    .top {
+
+      nav {
+    
+        ul {
+          gap: 20px;
+        }
+      }
+
+      & > div {
+        
+        .phone-number {
+          display: none;
+        }
+
+        .ui-button {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  @include respond(medium) {
+
+    .top {
+      height: 60px;
+
+      nav {
+        padding: 50px 70px 50px 30px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        bottom: 0;
+        z-index: 100;
+        transform: translateX(101%);
+        background-color: $gray-primary;
+        transition: transform .25s ease-in-out;
+
+        ul {
+          flex-direction: column;
+        }
+
+        & > a {
+          margin-left: 0 !important;
+          margin-top: 30px;
+          display: block;
+        }
+      }
+
+      & > div {
+        margin-left: 20px;
+        
+        .phone-number {
+          display: inline;
+        }
+
+        .ui-button {
+          display: none;
+        }
+      }
+
+      #burger {
+        margin-left: auto;
+        display: block;
+        width: 27px;
+        height: 21px;
+
+        .icon, .icon::before, .icon::after {
+          transition: all .25s ease-in-out;
+          width: 27px;
+          height: 3px;
+          background-color: $black;
+          border-radius: 50px;
+        }
+
+        .icon {
+          position: relative;
+          top: 50%;
+          transform: translateY(-50%);
+  
+          &::before, &::after {
+            content: "";
+            position: absolute;
+          }
+  
+          &::before {
+            top: -9px;
+          }
+  
+          &::after {
+            top: 9px;
+          }
+        }
+      }
+
+    }
+
+    #overlay {
+      display: block;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 60px;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      visibility: hidden;
+      opacity: 0;
+      background: #0b0b0b77;
+      z-index: 99;
+      transition: all 0.25s ease-in;
+    }
+
+    &.open {
+
+      .top {
+
+        nav {
+          transform: translateX(0);
+        }
+      }
+
+      #overlay {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      #burger {
+
+        .icon {
+          background: transparent;
+
+          &::before {
+            transform: rotateZ(45deg) scaleX(1.25) translate(6px, 6px);
+          }
+
+          &::after {
+            transform: rotateZ(-45deg) scaleX(1.25) translate(5px, -5px);
+          }
+        }
+      }
+    }
+  }
+}

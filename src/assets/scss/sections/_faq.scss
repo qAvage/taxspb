@@ -1,0 +1,26 @@
+// -----------------------------------------------------------------------------
+// Faq stylesheets
+// -----------------------------------------------------------------------------
+
+
+
+#faq {
+  padding: 50px 0;
+  background-color: $gray-primary;
+
+  li {
+    padding-top: 20px;
+    max-width: 600px;
+    display: flex;
+    gap: 5px;
+  }
+
+  span, p {
+    
+    &:first-child {
+      padding-bottom: 5px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+  }
+}

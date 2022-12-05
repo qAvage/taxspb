@@ -1,0 +1,30 @@
+// -----------------------------------------------------------------------------
+// Partners stylesheets
+// -----------------------------------------------------------------------------
+
+
+
+#partners {
+  padding: 60px 0;
+
+  p {
+    padding: 20px 0 40px;
+  }
+
+  .icons {
+    display: flex;
+    gap: 40px;
+
+    .ui-icon {
+      width: 176px;
+      height: 102px;
+    }
+  }
+
+  @include respond(small) {
+
+    .icons {
+      gap: 20px;
+    }
+  }
+}

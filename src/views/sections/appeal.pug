@@ -1,0 +1,38 @@
+section#appeal
+  .appeal
+    .inner
+      h2 Устройтесь на работу в Такси.Северозапад
+      p Заполните форму заявки и зарабатывайте с первого дня. Мы перезвоним вам в течение 15 минут
+      form(
+        autocomplete="off"
+        ref="form"
+        @submit.prevent="submitForm")
+        .fields
+          .name
+            input(
+              name="name"
+              v-model.trim="name"
+              placeholder="Ваше Имя")
+          .phone
+            input(
+              name="phone"
+              :class="{error: userPhoneErrorText}"
+              @complete="onComplete"
+              @accept="onAccept"
+              v-imask="maskPhone"
+              placeholder="Номер телефона")
+            transition(name="error")
+              span(v-show="userPhoneErrorText") {{ userPhoneErrorText }}
+        .notes
+          p *Отправляя заявку, вы соглашаетесь с #[a(href="./static/policy.html" target="_blank") конфиденциальностью]
+          p **Ознакомитесь с нашими требованиями для трудоустройства
+          p ***Доход зависит от выбранного графика
+        .buttons
+          button(type="submit").ui-button.primary Отправить
+          a(href="#calculator").ui-button.secondary Расчитать доход
+        p оставьте заявку - мы устроим на работу
+        transition(name="popup")
+          .popup(v-if="isShowPopup")
+            p Вы сделали правильный выбор!
+            p Мы скоро свяжемся с вами по номеру: {{ popupNum }}
+  .bg-img

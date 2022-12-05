@@ -1,0 +1,41 @@
+// -----------------------------------------------------------------------------
+// Map
+// -----------------------------------------------------------------------------
+
+
+
+#map {
+  padding-top: 50px;
+
+  p {
+    padding-top: 20px;
+    max-width: 700px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  ul {
+    padding: 30px 0 50px;
+  }
+
+  li {
+    padding: 3px 0;
+    display: flex;
+    font-weight: 600;
+
+    &::before {
+      content: "";
+      margin: 7px 8px 0 0;
+      width: 5px;
+      height: 5px;
+      display: inline-block;
+      flex-shrink: 0;
+      border-radius: 50px;
+      background-color: $black;
+    }
+  }
+
+  .map {
+    height: 400px;
+  }
+}

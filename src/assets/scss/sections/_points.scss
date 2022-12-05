@@ -1,0 +1,33 @@
+// -----------------------------------------------------------------------------
+// Points stylesheets
+// -----------------------------------------------------------------------------
+
+
+
+#points {
+  padding: 50px 0;
+  color: $white;
+  background-color: $black;
+  
+  background-image: url(/src/assets/images/points-bg-min.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+
+  span {
+    font-size: 30px;
+  }
+
+  li {
+    padding-top: 20px;
+  }
+
+  p {
+    padding-top: 6px;
+  }
+
+  @include respond(medium) {
+    background-position: 200px;
+    background-size: cover;
+  }
+}

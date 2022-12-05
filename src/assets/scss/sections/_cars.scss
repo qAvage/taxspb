@@ -1,0 +1,34 @@
+// -----------------------------------------------------------------------------
+// Cars stylesheets
+// -----------------------------------------------------------------------------
+
+
+#cars {
+  background: linear-gradient($black, $white);
+  transform: translateY(-10px);
+
+  h2 {
+    padding: 60px 0 20px;
+    color: $white;
+    text-align: center;
+  }
+
+  .carousel-cell {
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  @include respond(medium) {
+
+    h2 {
+      padding: 60px 18px 20px;
+    }
+
+    .container {
+      padding: 0;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+//-
+  SVG sprite mixin
+  @param {string} iconID - Name of icon ID attribute without #: 'icon-help'
+mixin uiIcon(icon_id)
+  i.ui-icon&attributes(attributes): svg: use(xlink:href=require('@/assets/images/graphics.svg') + '#' + icon_id)
+
+
+//-
+  Image mixin
+  @param {string} file - Name and extension: 'my-image.jpg'
+  @param {string} alt - Text of alt attribute
+mixin img(file)
+  img(src=require('@/assets/images/' + file))&attributes(attributes)

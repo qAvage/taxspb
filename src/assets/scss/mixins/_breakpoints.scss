@@ -1,0 +1,20 @@
+// -----------------------------------------------------------------------------
+// Breakpoints
+// -----------------------------------------------------------------------------
+
+
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == small-sm-ex {
+      @media only screen and (max-width: $bp-small-sm-ex) { @content };
+  }
+  @if $breakpoint == small {
+      @media only screen and (max-width: $bp-small) { @content };
+  }
+  @if $breakpoint == medium {
+      @media only screen and (max-width: $bp-medium) { @content };
+  }
+  @if $breakpoint == large {
+      @media only screen and (max-width: $bp-large) { @content };
+  }
+}

@@ -1,0 +1,132 @@
+// -----------------------------------------------------------------------------
+// Hero
+// -----------------------------------------------------------------------------
+
+
+
+#hero {
+  margin-top: 69px;
+  
+  .wrapper {
+    display: flex;
+
+    & > div {
+      width: 50%;
+    }
+
+    .hero-img {
+      background-image: url(/src/assets/images/hero-bg.jpg);
+      background-repeat: no-repeat;
+      background-position: top center;
+      background-size: cover;
+    }
+
+    .content {
+      padding: 90px 36px 90px 40px;
+      background-color: $gray-primary;
+
+      h1 {
+        max-width: 500px;
+        padding-bottom: 15px;
+      }
+
+      p {
+
+        & span {
+          font-weight: 700;
+
+          &.red {
+            color: red;
+            font-size: 18px;
+          }
+        }
+
+        &:first-of-type, &:last-of-type {
+          font-size: 14px;
+        }
+
+        &:first-of-type {
+          padding-bottom: 30px;
+          font-weight: 700;
+          color: #696969;
+        }
+
+        &:last-of-type {
+          padding: 20px 0;
+        }
+      }
+
+      .points {
+        display: flex;
+        padding-bottom: 40px;
+
+        div {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+
+          .ui-icon {
+            width: 50px;
+            height: 50px;
+            flex-shrink: 0;
+          }
+
+          span {
+            max-width: 170px;
+            font-size: 12px;
+          }
+        }
+      }
+
+      .buttons {
+        max-width: 430px;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  @include respond(medium) {
+    margin-top: 50px;
+
+    .wrapper {
+      flex-direction: column;
+
+      & > div {
+        width: 100%;
+      }
+
+      .hero-img {
+        height: 220px;
+      }
+
+      .content {
+        padding: 50px 36px;
+      }
+    }
+  }
+
+  @include respond(small) {
+
+    .wrapper {
+
+      .hero-img {
+        height: 220px;
+      }
+
+      .content {
+        padding: 40px 18px;
+
+        h1 {
+          font-size: 30px;
+        }
+
+        .buttons {
+          max-width: 188px;
+          flex-direction: column;
+          gap: 16px;
+        }
+      }
+    }
+  }
+}

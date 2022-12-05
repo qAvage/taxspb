@@ -1,0 +1,38 @@
+section#calculator
+  .calculator
+    .wrapper
+      h2 Расчитайте свой заработок
+      p Выберите удобный график
+      .hours
+        div
+          input(type="radio" id="half" name="hours" checked  v-model="hours" value="22800")
+          label(for="half") 12 часов
+          span 2 часа на отдых
+        div
+          input(type="radio" id="entire" name="hours" v-model="hours" value="32000")
+          label(for="entire") 24 часа
+          span 8 часов на отдых
+      p Дней в неделю
+      .days
+        input(type="radio" id="one" name="days" value="1" v-model="days")
+        label(for="one") 1
+        input(type="radio" id="two" name="days" value="2" v-model="days")
+        label(for="two") 2
+        input(type="radio" id="three" name="days" value="3" v-model="days")
+        label(for="three") 3
+        input(type="radio" id="four" name="days" value="4" v-model="days")
+        label(for="four") 4
+        input(type="radio" id="five" name="days" value="5" checked v-model="days")
+        label(for="five") 5
+        input(type="radio" id="six" name="days" value="6" v-model="days")
+        label(for="six") 6
+        input(type="radio" id="seven" name="days" value="7" v-model="days")
+        label(for="seven") 7
+      a(href="#appeal").ui-button.primary Оставить заявку
+  .mokup
+    .wrapper
+      .phone
+        .earnings
+          p Ваш заработок за месяц составит:
+          p {{ animatedNumber }} руб.
+        +uiIcon('fill')

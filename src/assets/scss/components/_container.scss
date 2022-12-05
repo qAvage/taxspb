@@ -1,0 +1,16 @@
+//------------------------------------------------------------------------------
+// Container
+//------------------------------------------------------------------------------
+
+
+
+.container {
+  margin: 0 auto;
+  padding: 0 36px;
+  max-width: calc($container-width + 2 * 36px);
+
+  @include respond(small) {
+    padding: 0 18px;
+    max-width: calc($container-width + 2 * 18px);
+  }
+}

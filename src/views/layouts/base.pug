@@ -1,0 +1,32 @@
+include ../mixins/utils
+
+doctype html
+html(lang='ru-RU')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content="width=device-width, initial-scale=1.0, viewport-fit=cover, shrink-to-fit=no, maximum-scale=1")
+    meta(name="description" content="Такси.Северозапад")
+    meta(name='theme-color' content='#ffffff')
+    include ../parts/metrics
+    title='Такси.Северозапад'
+    link(href=require('Styles/main.scss') rel='stylesheet')
+    link(rel='icon' type='image/png' sizes='16x16' href='./static/favicon-16x16.png')
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  body
+    include ./header
+    main
+      include ../sections/hero.pug
+      include ../sections/best-terms.pug
+      include ../sections/benefits.pug
+      include ../sections/cars.pug
+      include ../sections/partners.pug
+      include ../sections/points.pug
+      include ../sections/calculator.pug
+      include ../sections/faq.pug
+      include ../sections/map.pug
+      include ../sections/appeal.pug
+    include ./footer
+    script(type="text/javascript" async src="https://piter-tjek.megapbx.ru/callback.js?uid=c1df577c-db63-4520-b5ea-548017d8e998" charset="utf-8")
+    script(src=require('/src/main.js'))

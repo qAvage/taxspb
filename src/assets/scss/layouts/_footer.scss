@@ -1,0 +1,53 @@
+// -----------------------------------------------------------------------------
+// Footer stylesheets
+// -----------------------------------------------------------------------------
+
+
+
+footer {
+  padding: 50px 0;
+
+  .container {
+    display: flex;
+
+    & > div {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      &:first-child {
+        gap: 10px;
+        
+        a, p {
+          color: $gray-secondary;
+          font-size: 12px;
+        }
+      }
+
+      &:last-child {
+        
+        p {
+          font-size: 24px;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  @include respond(small) {
+
+    .container {
+
+      & > div {
+        width: 100%;
+  
+        &:last-child {
+          display: none;
+        }
+      }
+    }
+  }
+}

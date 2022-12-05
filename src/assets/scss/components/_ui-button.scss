@@ -1,0 +1,38 @@
+// -----------------------------------------------------------------------------
+// Ui button component stylesheets
+// -----------------------------------------------------------------------------
+
+
+
+.ui-button {
+  padding: 16px 22px;
+  display: inline-block;
+  font-weight: 700;
+  user-select: none;
+  transition: 
+    background-color ease-in-out 250ms,
+    color ease-in-out 250ms;
+
+  &.primary {
+    background-color: $yellow;
+
+    &:hover {
+      background-color: #ebc51e;
+    }
+
+    &:active {
+      background-color: $yellow;
+    }
+  }
+
+  &.secondary {
+    border: 1px solid $gray-secondary;
+    text-align: center;
+
+    &:hover {
+    }
+
+    &:active {
+    }
+  }
+}
